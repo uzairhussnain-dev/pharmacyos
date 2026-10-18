@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 165 14% 96%; /* #F4F7F6 */
+    --foreground: 200 50% 14%; /* #122A36 */
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 14%;
+    --primary: 162 76% 34%; /* #159A72 Pharmacy Green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 50% 14%; /* #122A36 Navy Teal */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 165 12% 91%;
+    --muted-foreground: 200 20% 40%;
+    --accent: 38 78% 60%; /* #E8B04A Amber Accent */
+    --accent-foreground: 200 50% 14%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 165 15% 88%;
+    --input: 165 15% 88%;
+    --ring: 162 76% 34%;
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  background-color: #F4F7F6;
+  color: #122A36;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars for high-density tables & carts */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles for POS Receipts */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@pharmacy-os/shared-types",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', '{\\\"type\\\":\\\"commonjs\\\"}'); require('fs').writeFileSync('dist/esm/package.json', '{\\\"type\\\":\\\"module\\\"}');\"",
+    "typecheck": "tsc -p tsconfig.cjs.json --noEmit",
+    "dev": "tsc -p tsconfig.cjs.json --watch --preserveWatchOutput",
+    "lint": "echo \"(shared-types) no lint rules\"",
+    "test": "echo \"(shared-types) no tests\""
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

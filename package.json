@@ -1,0 +1,25 @@
+{
+    "name": "pharmacy-os",
+    "version": "0.1.0",
+    "private": true,
+    "packageManager": "pnpm@11.18.0",
+    "engines": {
+        "node": "\u003e=20"
+    },
+    "scripts": {
+        "dev": "pnpm -r --parallel --filter ./apps/* dev",
+        "dev:api": "pnpm --filter @pharmacy-os/api dev",
+        "dev:web": "pnpm --filter @pharmacy-os/web dev",
+        "build": "pnpm -r build",
+        "lint": "pnpm -r lint",
+        "typecheck": "pnpm -r typecheck",
+        "test": "pnpm -r test",
+        "test:e2e": "pnpm --filter @pharmacy-os/web test:e2e",
+        "seed": "pnpm --filter @pharmacy-os/api seed",
+        "format": "prettier --write \"**/*.{ts,tsx,js,json,md,css}\"",
+        "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md,css}\""
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2"
+    }
+}

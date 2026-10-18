@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  esbuild: true
+  mongodb-memory-server: true
+  unrs-resolver: true
+  "@parcel/watcher": true
+  "@scarf/scarf": false

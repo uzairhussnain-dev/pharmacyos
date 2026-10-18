@@ -11,6 +11,7 @@
         "dev:api": "pnpm --filter @pharmacy-os/api dev",
         "dev:web": "pnpm --filter @pharmacy-os/web dev",
         "build": "pnpm -r build",
+        "build:web": "pnpm --filter @pharmacy-os/shared-types build && pnpm --filter @pharmacy-os/web build",
         "lint": "pnpm -r lint",
         "typecheck": "pnpm -r typecheck",
         "test": "pnpm -r test",

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "pnpm --filter @pharmacy-os/shared-types build && next build",
+  "installCommand": "pnpm install"
+}
